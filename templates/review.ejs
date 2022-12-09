@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<style>
+    body {
+        background-color: rgb(156, 145, 115);
+    }
+
+    h1 {
+        text-align: center;
+        color: rgb(138, 109, 72);
+        font-size: 5rem;
+        position:inherit;
+    }
+
+    .button {
+        position: absolute;
+        left: 45%;
+        right: 40%
+    }
+
+    #box {
+        width: 30rem;
+        height: 10rem;
+    }
+
+    fieldset {
+        text-align: center;
+    }
+</style>
+
+<head>
+	<meta charset="utf-8" />
+	<title>CoolReads</title>
+</head>
+
+<body>
+	<h1>Review a Book</h1>
+	
+	<form action="<%= lnk %>" method="post">
+		<fieldset>
+			<label><b>Book Name: <br><br></b><input type="text" name="bookname"/></label><br><br>
+			<label><b>Author: <br><br></b><input type="text" name="author"/></label><br><br>
+			<label><b>Number of Pages: <br><br></b><input type="number" min="0" name="page" /></label><br><br>
+            <label><b>Rating (Out of 5): <br><br></b><input type="number" min="0" name="rating" /></label><br><br>
+			<label><b>Review: </b><br><br><input type="text" name="review" id="box"/></label>
+		</fieldset>
+		<br>
+        <div class="button">
+		<input type="reset"/>
+		<input type="submit" value="Submit Review"/>
+        </div>
+	</form>
+</body>
+</html>
