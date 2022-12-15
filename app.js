@@ -36,7 +36,7 @@ app.get("/bestsellers", (request, response) => {
 });
 
 app.get("/review", (request, response) => {
-    let lnk = "http://localhost:" + PORT + "/review";
+    let lnk = "https://coolreads.onrender.com/review";
     const variables = {
         lnk: lnk
     };
@@ -71,7 +71,7 @@ app.post("/review", async function (request, response) {
 });
 
 app.get("/list", (request, response) => {
-    let lnk = "http://localhost:" + PORT + "/list";
+    let lnk = "https://coolreads.onrender.com/list";
     const variables = {
         lnk: lnk
     };
@@ -104,8 +104,8 @@ app.post("/list", async function (request, response) {
     response.end(answer);
 });
 
-app.listen(PORT);
-console.log(`Web server started and running at http://localhost:${PORT}`);
+//app.listen(PORT);
+console.log("Web server started");
 /*process.stdout.write("Stop to shutdown the server\n");
 process.stdin.on("readable", function() {
     let dataInput = process.stdin.read();
