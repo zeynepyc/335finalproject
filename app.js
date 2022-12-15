@@ -6,7 +6,7 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 require("dotenv").config({ path: path.resolve(__dirname, 'credentialsDontPost/.env') }) 
-let PORT = 5090;
+let PORT = process.env.PORT || 5090;
 
 const userName = process.env.MONGO_DB_USERNAME;
 const password = process.env.MONGO_DB_PASSWORD;
@@ -104,7 +104,7 @@ app.post("/list", async function (request, response) {
     response.end(answer);
 });
 
-//app.listen(PORT);
+app.listen(PORT);
 console.log("Web server started");
 /*process.stdout.write("Stop to shutdown the server\n");
 process.stdin.on("readable", function() {
