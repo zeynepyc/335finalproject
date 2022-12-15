@@ -6,7 +6,7 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 require("dotenv").config({ path: path.resolve(__dirname, 'credentialsDontPost/.env') }) 
-let PORT = 5090;
+let PORT = process.env.PORT || 5090;
 
 const userName = process.env.MONGO_DB_USERNAME;
 const password = process.env.MONGO_DB_PASSWORD;
@@ -36,7 +36,7 @@ app.get("/bestsellers", (request, response) => {
 });
 
 app.get("/review", (request, response) => {
-    let lnk = "http://localhost:" + PORT + "/review";
+    let lnk = "https://coolreads.onrender.com/review";
     const variables = {
         lnk: lnk
     };
@@ -71,7 +71,7 @@ app.post("/review", async function (request, response) {
 });
 
 app.get("/list", (request, response) => {
-    let lnk = "http://localhost:" + PORT + "/list";
+    let lnk = "https://coolreads.onrender.com/list";
     const variables = {
         lnk: lnk
     };
@@ -105,12 +105,12 @@ app.post("/list", async function (request, response) {
 });
 
 app.listen(PORT);
-console.log(`Web server started and running at http://localhost:${PORT}`);
-process.stdout.write("Stop to shutdown the server\n");
+console.log("Web server started");
+/*process.stdout.write("Stop to shutdown the server\n");
 process.stdin.on("readable", function() {
     let dataInput = process.stdin.read();
     if(dataInput.trim() === "stop") {
         process.stdout.write("Shutting down the server\n");
         process.exit(0);
     } 
-});
+});*/
