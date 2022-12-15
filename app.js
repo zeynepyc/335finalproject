@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+const fetch = require('node-fetch');
 const http = require('http');
 process.stdin.setEncoding("utf8");
 let fs = require("fs");
