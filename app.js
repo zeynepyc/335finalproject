@@ -106,11 +106,11 @@ app.post("/list", async function (request, response) {
 
 app.listen(PORT);
 console.log(`Web server started and running at http://localhost:${PORT}`);
-process.stdout.write("Stop to shutdown the server\n");
-process.stdin.on("readable", function() {
+//process.stdout.write("Stop to shutdown the server\n");
+/*process.stdin.on("readable", function() {
     let dataInput = process.stdin.read();
     if(dataInput.trim() === "stop") {
         process.stdout.write("Shutting down the server\n");
         process.exit(0);
     } 
-});
+}); */
